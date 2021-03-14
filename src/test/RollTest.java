@@ -1,7 +1,7 @@
-package unitest;
+package test;
 
+import frame.Roll;
 import junit.framework.TestCase;
-import katas.Roll;
 
 public class RollTest extends TestCase {
 	public void testRoll() throws Exception {
@@ -9,11 +9,16 @@ public class RollTest extends TestCase {
 			final Roll r = new Roll(p);
 			assertEquals(p, r.getPins());
 			assertFalse(r.isStrike());
+			assertFalse(Roll.isStrike(p));
 		}
 	}
 	
 	public void testIsStrike() throws Exception {
 		final Roll r = new Roll(Roll.MAX_PINS);
 		assertTrue(r.isStrike());
+	}
+	
+	public void testStaticIsStrike() throws Exception {
+		assertTrue(Roll.isStrike(Roll.MAX_PINS));
 	}
 }

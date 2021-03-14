@@ -1,7 +1,9 @@
-package katas;
+package game;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+
+import frame.Frame;
 
 public class Game {
 	private final Deque<Frame> frames;
@@ -15,10 +17,10 @@ public class Game {
 	}
 	
 	private Frame getCurrentFrame() {
-		if (frames.size() == 0) {
-			frames.add(new Frame());
+		if (frames.isEmpty()) {
+			frames.add(Frame.get(frames.size()));
 		} else if (frames.getLast().isCompleted()) {
-			final Frame newFrame = frames.size() < 9? new Frame():new TenthFrame();
+			final Frame newFrame = Frame.get(frames.size());
 			frames.getLast().setNext(newFrame);
 			frames.add(newFrame);
 		}

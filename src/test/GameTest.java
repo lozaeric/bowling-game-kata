@@ -1,8 +1,7 @@
-package unitest;
+package test;
 
+import game.Game;
 import junit.framework.TestCase;
-import katas.Game;
-import katas.Roll;
 
 public class GameTest extends TestCase {
 	public void testGame() throws Exception {

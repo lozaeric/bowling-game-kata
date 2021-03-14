@@ -1,4 +1,4 @@
-package katas;
+package frame;
 
 public class Roll {
 	public static final int MAX_PINS = 10;
@@ -8,8 +8,12 @@ public class Roll {
 		this.pins = pins;
 	}
 	
-	public boolean isStrike() {
+	public static boolean isStrike(int pins) {
 		return pins == MAX_PINS;
+	}
+	
+	public boolean isStrike() {
+		return isStrike(pins);
 	}
 	
 	public int getPins() {
